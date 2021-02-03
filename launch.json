@@ -1,0 +1,79 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+      "name": "Debug Client",
+      "type": "cppdbg",
+      "windows": {
+        "type": "cppvsdbg",
+        "program": "${workspaceRoot}/out/Component/brave",
+      },
+      "osx": {
+        "MIMode": "lldb",
+        "program": "${workspaceRoot}/out/Component/Brave Browser Development.app/Contents/MacOS/Brave Browser Development",
+      },
+      "request": "launch",
+      "targetArchitecture": "x64",
+      "args": [
+        "--enable-logging=stderr",
+        "--v=1"
+      ],
+      "preLaunchTask": "build_debug",
+      "stopAtEntry": false,
+      "cwd": "${workspaceRoot}",
+      "environment": [],
+      "externalConsole": false,
+      "autoAttachChildProcesses" : true
+    },
+    {
+      "name": "Linters",
+      "type": "node",
+      "windows": {
+        "program": "echo",
+      },
+      "request": "launch",
+      "targetArchitecture": "x64",
+      "args": [
+      ],
+      "preLaunchTask": "linters_task",
+      "stopAtEntry": false,
+      "cwd": "${workspaceRoot}",
+      "environment": [],
+      "externalConsole": false,
+      "autoAttachChildProcesses" : true
+    },
+    {
+      "name": "Unittests",
+      "type": "node",
+      "windows": {
+        "program": "echo",
+      },
+      "request": "launch",
+      "targetArchitecture": "x64",
+      "args": [
+      ],
+      "preLaunchTask": "build_unit_tests",
+      "stopAtEntry": false,
+      "cwd": "${workspaceRoot}",
+      "environment": [],
+      "externalConsole": false,
+      "autoAttachChildProcesses" : true
+    },
+    {
+      "name": "Browser tests",
+      "type": "node",
+      "windows": {
+        "program": "echo",
+      },
+      "request": "launch",
+      "targetArchitecture": "x64",
+      "args": [
+      ],
+      "preLaunchTask": "build_browser_tests",
+      "stopAtEntry": false,
+      "cwd": "${workspaceRoot}",
+      "environment": [],
+      "externalConsole": false,
+      "autoAttachChildProcesses" : true
+    }]
+  }

@@ -1,0 +1,104 @@
+{
+    "version": "0.2.0",
+    "_runner": "terminal",
+    "presentation" : { "reveal": "...", "echo": "..." },
+    "echoCommand": true,
+    "tasks": [
+      {
+        "label": "build_debug",
+        "command": "npm run build",
+        "presentation": {
+          "echo": "..."
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "type": "shell",
+
+        "problemMatcher": []
+      },
+      {
+        "label": "linters_task",
+
+        "presentation": {
+          "echo": "..."
+        },
+        "group": {
+          "kind": "build"
+        },
+        "type": "npm",
+        "script": "lint",
+        "problemMatcher": {
+          "base": "$tslint5",
+          "fileLocation": "relative"
+        }
+      },
+      {
+        "label": "linters_tslint",
+
+        "presentation": {
+          "echo": "..."
+        },
+        "group": {
+          "kind": "build"
+        },
+        "type": "npm",
+        "script": "tslint",
+        "problemMatcher": {
+          "base": "$tslint5",
+          "fileLocation": "relative"
+        },
+        "dependsOrder": "sequence",
+        "dependsOn": ["linters_gn_check"]
+      },
+      {
+        "label": "linters_gn_check",
+
+        "presentation": {
+          "echo": "..."
+        },
+        "group": {
+          "kind": "build"
+        },
+        "type": "npm",
+        "script": "gn_check",
+        "problemMatcher": {
+          "base": "$tslint5",
+          "fileLocation": "relative"
+        }
+      },
+      {
+        "label": "build_unit_tests",
+
+        "presentation": {
+          "echo": "..."
+        },
+        "group": {
+          "kind": "build"
+        },
+        "type": "shell",
+        "command": "ninja -C ${workspaceRoot}/out/Component brave/test:brave_unit_tests",
+        "problemMatcher": {
+          "base": "$tslint5",
+          "fileLocation": "relative"
+        }
+      },
+      {
+        "label": "build_browser_tests",
+
+        "presentation": {
+          "echo": "..."
+        },
+        "group": {
+          "kind": "build"
+        },
+        "type": "shell",
+        "command": "ninja -C ${workspaceRoot}/out/Component brave/test:brave_browser_tests",
+        "problemMatcher": {
+          "base": "$tslint5",
+          "fileLocation": "relative"
+        }
+      }
+    ]
+  }
