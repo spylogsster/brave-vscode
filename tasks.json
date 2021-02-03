@@ -29,10 +29,7 @@
         },
         "type": "npm",
         "script": "lint",
-        "problemMatcher": {
-          "base": "$tslint5",
-          "fileLocation": "relative"
-        }
+        "problemMatcher": []
       },
       {
         "label": "linters_tslint",
@@ -45,10 +42,7 @@
         },
         "type": "npm",
         "script": "tslint",
-        "problemMatcher": {
-          "base": "$tslint5",
-          "fileLocation": "relative"
-        },
+        "problemMatcher": [],
         "dependsOrder": "sequence",
         "dependsOn": ["linters_gn_check"]
       },
@@ -63,10 +57,22 @@
         },
         "type": "npm",
         "script": "gn_check",
-        "problemMatcher": {
-          "base": "$tslint5",
-          "fileLocation": "relative"
-        }
+        "problemMatcher": []
+      },
+      {
+        "label": "run_unit_tests",
+
+        "presentation": {
+          "echo": "..."
+        },
+        "group": {
+          "kind": "build"
+        },
+        "type": "shell",
+        "command": "lldb  -o 'process launch' -o 'q' -- ${workspaceRoot}/out/Component/brave_unit_tests --gtest_filter='IpfsNavigationThrottleUnitTest.*'",
+        "problemMatcher": [],
+        "dependsOrder": "sequence",
+        "dependsOn": ["build_unit_tests"]
       },
       {
         "label": "build_unit_tests",
@@ -79,10 +85,7 @@
         },
         "type": "shell",
         "command": "ninja -C ${workspaceRoot}/out/Component brave/test:brave_unit_tests",
-        "problemMatcher": {
-          "base": "$tslint5",
-          "fileLocation": "relative"
-        }
+        "problemMatcher": []
       },
       {
         "label": "build_browser_tests",
@@ -95,10 +98,7 @@
         },
         "type": "shell",
         "command": "ninja -C ${workspaceRoot}/out/Component brave/test:brave_browser_tests",
-        "problemMatcher": {
-          "base": "$tslint5",
-          "fileLocation": "relative"
-        }
+        "problemMatcher": []
       }
     ]
   }

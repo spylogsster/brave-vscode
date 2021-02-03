@@ -43,14 +43,21 @@
       "autoAttachChildProcesses" : true
     },
     {
-      "name": "Unittests",
-      "type": "node",
+      "name": "DebugUnittests",
+      "type": "cppdbg",
       "windows": {
-        "program": "echo",
+        "type": "cppvsdbg",
+        "program": "${workspaceRoot}/out/Component/brave_unit_tests",
+      },
+      "osx": {
+        "MIMode": "lldb",
+        "miDebuggerPath": "/Users/spylogsster/repos/lldb-mi/src/lldb-mi",
+        "program": "${workspaceRoot}/out/Component/brave_unit_tests",
       },
       "request": "launch",
       "targetArchitecture": "x64",
       "args": [
+        "--gtest_filter='IpfsNavigationThrottleUnitTest.SequentialRequests'"
       ],
       "preLaunchTask": "build_unit_tests",
       "stopAtEntry": false,
@@ -59,6 +66,28 @@
       "externalConsole": false,
       "autoAttachChildProcesses" : true
     },
+    {
+      "name": "RunUnittests",
+      "type": "cppdbg",
+      "windows": {
+        "program": "echo",
+      },
+      "osx": {
+        "program": "${workspaceRoot}/out/Component/brave_unit_tests",
+      },
+      "request": "launch",
+      "targetArchitecture": "x64",
+      "args": [
+        "--gtest_filter='IpfsNavigationThrottleUnitTest.SequentialRequests'"
+      ],
+      "preLaunchTask": "run_unit_tests",
+      "stopAtEntry": false,
+      "cwd": "${workspaceRoot}",
+      "environment": [],
+      "externalConsole": false,
+      "autoAttachChildProcesses" : true
+    },
+
     {
       "name": "Browser tests",
       "type": "node",
