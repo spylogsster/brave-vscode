@@ -10,7 +10,14 @@
       },
       "osx": {
         "MIMode": "lldb",
-        "program": "${workspaceRoot}/out/Component/Brave Browser Development.app/Contents/MacOS/Brave Browser Development",
+        "program": "${workspaceRoot}/out/Component/Brave Browser Development.app",
+        "setupCommands": [
+          {
+            "description": "Loading symbols to lldb",
+            "text": "command source ${workspaceRoot}/.vscode/.lldbinit",
+            "ignoreFailures": false
+          },
+        ]
       },
       "request": "launch",
       "targetArchitecture": "x64",

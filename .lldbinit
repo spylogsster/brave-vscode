@@ -1,0 +1,2 @@
+script sys.path[:0] = ['tools/lldb']
+script import lldbinit
