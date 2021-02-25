@@ -6,7 +6,7 @@
       "type": "cppdbg",
       "windows": {
         "type": "cppvsdbg",
-        "program": "${workspaceRoot}/out/Component/brave",
+        "program": "${workspaceRoot}/out/Debug/brave",
       },
       "osx": {
         "MIMode": "lldb",
@@ -57,7 +57,7 @@
       "request": "launch",
       "targetArchitecture": "x64",
       "args": [
-        "--gtest_filter='IpfsNavigationThrottleUnitTest.SequentialRequests'"
+        "--gtest_filter=IPFSHostResolverTest.*"
       ],
       "preLaunchTask": "build_unit_tests",
       "stopAtEntry": false,
@@ -66,28 +66,6 @@
       "externalConsole": false,
       "autoAttachChildProcesses" : true
     },
-    {
-      "name": "RunUnittests",
-      "type": "cppdbg",
-      "windows": {
-        "program": "echo",
-      },
-      "osx": {
-        "program": "${workspaceRoot}/out/Component/brave_unit_tests",
-      },
-      "request": "launch",
-      "targetArchitecture": "x64",
-      "args": [
-        "--gtest_filter='IpfsNavigationThrottleUnitTest.SequentialRequests'"
-      ],
-      "preLaunchTask": "run_unit_tests",
-      "stopAtEntry": false,
-      "cwd": "${workspaceRoot}",
-      "environment": [],
-      "externalConsole": false,
-      "autoAttachChildProcesses" : true
-    },
-
     {
       "name": "Browser tests",
       "type": "node",

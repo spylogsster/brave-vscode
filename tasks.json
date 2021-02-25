@@ -6,7 +6,7 @@
     "tasks": [
       {
         "label": "build_debug",
-        "command": "npm run build",
+        "command": "npm run build -- Debug",
         "presentation": {
           "echo": "..."
         },
@@ -63,21 +63,6 @@
         "problemMatcher": []
       },
       {
-        "label": "run_unit_tests",
-
-        "presentation": {
-          "echo": "..."
-        },
-        "group": {
-          "kind": "build"
-        },
-        "type": "shell",
-        "command": "lldb  -o 'process launch' -o 'q' -- ${workspaceRoot}/out/Component/brave_unit_tests --gtest_filter='IpfsNavigationThrottleUnitTest.*'",
-        "problemMatcher": [],
-        "dependsOrder": "sequence",
-        "dependsOn": ["build_unit_tests"]
-      },
-      {
         "label": "build_unit_tests",
 
         "presentation": {
@@ -87,7 +72,7 @@
           "kind": "build"
         },
         "type": "shell",
-        "command": "ninja -C ${workspaceRoot}/out/Component brave/test:brave_unit_tests",
+        "command": "npm run test -- brave_unit_tests --filter='Dummy.JustToCompile'",
         "problemMatcher": []
       },
       {
@@ -100,7 +85,7 @@
           "kind": "build"
         },
         "type": "shell",
-        "command": "ninja -C ${workspaceRoot}/out/Component brave/test:brave_browser_tests",
+        "command": "npm run test -- brave_browser_tests --filter='Dummy.JustToCompile'",
         "problemMatcher": []
       }
     ]
