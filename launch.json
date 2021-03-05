@@ -75,13 +75,20 @@
     },
     {
       "name": "Browser tests",
-      "type": "node",
+      "type": "cppdbg",
       "windows": {
-        "program": "echo",
+        "type": "cppvsdbg",
+        "program": "${workspaceRoot}/out/Component/brave_browser_tests",
+      },
+      "osx": {
+        "MIMode": "lldb",
+        "miDebuggerPath": "/Users/spylogsster/repos/lldb-mi/src/lldb-mi",
+        "program": "${workspaceRoot}/out/Component/brave_browser_tests",
       },
       "request": "launch",
       "targetArchitecture": "x64",
       "args": [
+        "--gtest_filter=IpfsTabHelperBrowserTest.*"
       ],
       "preLaunchTask": "build_browser_tests",
       "stopAtEntry": false,
