@@ -22,8 +22,7 @@
       "request": "launch",
       "targetArchitecture": "x64",
       "args": [
-        "--enable-logging=stderr",
-        "--v=1"
+        "--vmodule=ipfs_service_*=1"
       ],
       "preLaunchTask": "build_debug",
       "stopAtEntry": false,
@@ -88,7 +87,7 @@
       "request": "launch",
       "targetArchitecture": "x64",
       "args": [
-        "--gtest_filter=IpfsTabHelperBrowserTest.*"
+        "--gtest_filter=IpfsServiceBrowserTest.GetConnectedPeersRetry"
       ],
       "preLaunchTask": "build_browser_tests",
       "stopAtEntry": false,
