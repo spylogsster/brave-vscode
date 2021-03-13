@@ -10,7 +10,7 @@
       },
       "osx": {
         "MIMode": "lldb",
-        "program": "${workspaceRoot}/out/Debug/Brave Browser Development.app",
+        "program": "${workspaceRoot}/out/Debug/Brave Browser Development.app/Contents/MacOS/Brave Browser Development",
         "setupCommands": [
           {
             "description": "Loading symbols to lldb",
