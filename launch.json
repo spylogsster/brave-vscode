@@ -19,6 +19,17 @@
           },
         ]
       },
+      "linux": {
+        "type": "lldb",
+        "program": "${workspaceRoot}/out/Default/blisk",
+        "setupCommands": [
+          {
+            "description": "Loading symbols to lldb",
+            "text": "command source ${workspaceRoot}/.vscode/.lldbinit",
+            "ignoreFailures": false
+          },
+        ]
+      },
       "request": "launch",
       "targetArchitecture": "x64",
       "args": [
@@ -28,8 +39,7 @@
       "stopAtEntry": false,
       "cwd": "${workspaceRoot}",
       "environment": [],
-      "externalConsole": false,
-      "autoAttachChildProcesses" : true
+      "externalConsole": false
     },
     {
       "name": "Linters",
