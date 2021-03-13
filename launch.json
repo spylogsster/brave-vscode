@@ -21,7 +21,7 @@
       },
       "linux": {
         "type": "lldb",
-        "program": "${workspaceRoot}/out/Default/blisk",
+        "program": "${workspaceRoot}/out/Default/brave",
         "setupCommands": [
           {
             "description": "Loading symbols to lldb",
