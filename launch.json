@@ -42,6 +42,45 @@
       "externalConsole": false
     },
     {
+      "name": "Component Client",
+      "type": "cppdbg",
+      "windows": {
+        "type": "cppvsdbg",
+        "program": "${workspaceRoot}/out/Component/brave",
+      },
+      "osx": {
+        "MIMode": "lldb",
+        "program": "${workspaceRoot}/out/Component/Brave Browser Development.app/Contents/MacOS/Brave Browser Development",
+        "setupCommands": [
+          {
+            "description": "Loading symbols to lldb",
+            "text": "command source ${workspaceRoot}/.vscode/.lldbinit",
+            "ignoreFailures": false
+          },
+        ]
+      },
+      "linux": {
+        "type": "lldb",
+        "program": "${workspaceRoot}/out/Component/brave",
+        "setupCommands": [
+          {
+            "description": "Loading symbols to lldb",
+            "text": "command source ${workspaceRoot}/.vscode/.lldbinit",
+            "ignoreFailures": false
+          },
+        ]
+      },
+      "request": "launch",
+      "targetArchitecture": "x64",
+      "args": [
+      ],
+      "preLaunchTask": "build_component",
+      "stopAtEntry": false,
+      "cwd": "${workspaceRoot}",
+      "environment": [],
+      "externalConsole": false
+    },
+    {
       "name": "Linters",
       "type": "node",
       "windows": {
