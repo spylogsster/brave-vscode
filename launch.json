@@ -20,12 +20,11 @@
         ]
       },
       "linux": {
-        "type": "lldb",
         "program": "${workspaceRoot}/out/Default/brave",
         "setupCommands": [
           {
-            "description": "Loading symbols to lldb",
-            "text": "command source ${workspaceRoot}/.vscode/.lldbinit",
+            "description": "Loading symbols to gdb",
+            "text": "command source ${workspaceRoot}/.vscode/.gdbinit",
             "ignoreFailures": false
           },
         ]
