@@ -20,7 +20,7 @@
         ]
       },
       "linux": {
-        "program": "${workspaceRoot}/out/Default/brave",
+        "program": "${workspaceRoot}/out/Debug/brave",
         "setupCommands": [
           {
             "description": "Loading symbols to gdb",
@@ -32,7 +32,7 @@
       "request": "launch",
       "targetArchitecture": "x64",
       "args": [
-        "--vmodule=ipfs_service_*=1"
+
       ],
       "preLaunchTask": "build_debug",
       "stopAtEntry": false,
